@@ -82,25 +82,25 @@ Part 2: Observe ICMP Traffic
 <img src="https://i.imgur.com/WyUYD91.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/lng3zxn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
 Part 3: Configure a Firewall (Network Security Group)
+
 Observe ICMP Traffic with Firewall Changes
-Initiate a continuous ping from your Windows 10 VM to the Ubuntu VM:
-Command: ping <Ubuntu VM Private IP> -t.
-Open the Network Security Group associated with the Ubuntu VM.
-Disable inbound ICMP traffic in the Network Security Group.
-Observe the ICMP traffic in Wireshark and the command line Ping activity (should stop).
-Re-enable ICMP traffic in the Network Security Group.
-Observe the ICMP traffic in Wireshark and the command line Ping activity (should resume).
-Stop the ping activity.
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+1. Initiate a continuous ping from your Windows 10 VM to the Ubuntu VM:
+ - Command: ping <Ubuntu VM Private IP> -t.
+2. Open the Network Security Group associated with the Ubuntu VM.
+3. Disable inbound ICMP traffic in the Network Security Group.
+4. Observe the ICMP traffic in Wireshark and the command line Ping activity (should stop).
+5. Re-enable ICMP traffic in the Network Security Group.
+6. Observe the ICMP traffic in Wireshark and the command line Ping activity (should resume).
+7. Stop the ping activity.
+<img src="https://i.imgur.com/PkDdLb0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/crq8ePa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/sW3wVKx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/hD9GxKO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dj5aZ7b.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 <img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 Observe SSH Traffic
