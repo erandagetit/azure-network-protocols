@@ -106,70 +106,68 @@ Observe ICMP Traffic with Firewall Changes
 <img src="https://i.imgur.com/6cESkod.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Observe SSH Traffic
-In Wireshark, start a new packet capture and filter for SSH traffic.
-From the Windows 10 VM, SSH into the Ubuntu VM:
-Command: ssh <username>@<Ubuntu VM Private IP>.
-Enter the password when prompted (the password will not be visible).
-Type commands within the SSH session and observe the SSH traffic in Wireshark.
-Exit the SSH session: exit.
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+1. In Wireshark, start a new packet capture and filter for SSH traffic.
+2. From the Windows 10 VM, SSH into the Ubuntu VM:
+  - Command: ssh <username>@<Ubuntu VM Private IP>.
+  - Enter the password when prompted (the password will not be visible).
+3. Type commands within the SSH session and observe the SSH traffic in Wireshark.
+4. Exit the SSH session: exit.
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/t8pqs0n.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/KoiWbbv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/uJ3wnnA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Observe DHCP Traffic
-In Wireshark, filter for DHCP traffic.
-From the Windows 10 VM, issue a new IP address:
-Open PowerShell as admin and run: ipconfig /renew.
-Observe the DHCP traffic in Wireshark.
-In this case our vm maintains the same IP. If we were to release our IP address (ipconfig /release) then renew it (ipconfig /renew) we would see the complete DHCP cycle in wireshark.
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+1. In Wireshark, filter for DHCP traffic.
+2. From the Windows 10 VM, issue a new IP address:
+  - Open PowerShell as admin and run: ipconfig /renew.
+3. Observe the DHCP traffic in Wireshark.
+4. In this case our vm maintains the same IP. If we were to release our IP address
+(ipconfig /release) then renew it (ipconfig /renew) we would see the complete DHCP cycle in wireshark.
+
+<img src="https://i.imgur.com/EARKYwR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Observing the full DHCP Cycle
 
 Open notepad and type the release and renew commands image
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/FePDY8l.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Choose a location to save the program. Here we chose c:\program data
+- Choose a location to save the program. Here we chose c:\program data
 
-You can name the file whatever you want but make sure to save it as a .bat file (this turns it into a simple script that we can run)
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- You can name the file whatever you want but make sure to save it as a .bat file (this turns it into a simple script that we can run)
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Make sure to change the 'save as type' to all files image
+- Make sure to change the 'save as type' to all files image
+<img src="https://i.imgur.com/z6qsP2e.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Change the directory that PowerShell is accessing to the location of the your .bat file by entering 'cd c:(filelocation)'
+- Change the directory that PowerShell is accessing to the location of the your .bat file by entering 'cd c:(filelocation)'
 
-In this case I will change the directory to c:\programdata image
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- In this case I will change the directory to c:\programdata image
+<img src="https://i.imgur.com/WqI5uo2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Run the DHCP.bat script that was just created by entering '.\dhcp.bat'
+- Run the DHCP.bat script that was just created by entering '.\dhcp.bat'
 
-This program should temporarily disconnect you from the vm because the IPv4 address is being released and renewed image
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- This program should temporarily disconnect you from the vm because the IPv4 address is being released and renewed image
+<img src="https://i.imgur.com/vNhGono.png " height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Observe the Release - Discover - Offer - Request - Acknowledge steps in the DHCP process image
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+- Observe the Release - Discover - Offer - Request - Acknowledge steps in the DHCP process image
+<img src="https://i.imgur.com/6oluNEM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 Observe DNS Traffic
-In Wireshark, filter for DNS traffic.
-From the Windows 10 VM, use nslookup to find IP addresses for websites:
-Example: nslookup www.bing.com.
-Observe the DNS traffic in Wireshark.
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+1. In Wireshark, filter for DNS traffic.
+2. From the Windows 10 VM, use nslookup to find IP addresses for websites:
+  - Example: nslookup www.bing.com.
+3. Observe the DNS traffic in Wireshark.
+<img src="https://i.imgur.com/RDCsN4k.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Observe RDP Traffic
-In Wireshark, filter for RDP traffic:
-Use the filter: tcp.port == 3389.
-Observe the continuous RDP traffic between the Windows 10 VM and your local machine.
-<img src="https://i.imgur.com/duWiJLi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+1. In Wireshark, filter for RDP traffic:
+  - Use the filter: tcp.port == 3389.
+2. Observe the continuous RDP traffic between the Windows 10 VM and your local machine.
+<img src="https://i.imgur.com/9eu9vAU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+
