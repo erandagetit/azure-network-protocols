@@ -1,4 +1,4 @@
-# azure-network-protocols<p align="center">
+  # azure-network-protocols<p align="center">
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
@@ -102,7 +102,9 @@ Observe ICMP Traffic with Firewall Changes
 <img src="https://i.imgur.com/hD9GxKO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/dj5aZ7b.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-<img src="https://i.imgur.com/Au2EVST.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/cpbB90D.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/6cESkod.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 Observe SSH Traffic
 In Wireshark, start a new packet capture and filter for SSH traffic.
 From the Windows 10 VM, SSH into the Ubuntu VM:
